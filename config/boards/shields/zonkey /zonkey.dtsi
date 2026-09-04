@@ -4,6 +4,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,battery = &non_lipo_battery;
     };
 
     physical_layout0: physical_layout_0 {
@@ -90,6 +91,21 @@
             , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
+    };
+
+    trackball_listener: trackball_listener {
+      compatible = "zmk,input-listener";
+      status = "disabled";
+   };
+
+
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 0>;
+    };
+
+    vbatt {
+        status = "disabled";
     };
 
     left_encoder: encoder_left {
