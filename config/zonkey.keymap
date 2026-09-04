@@ -181,25 +181,23 @@
             flavor = "hold-preferred";  // 長押しを少し強めに優先
             tapping-term-ms = <1000>;    // 長押し判定（好みに応じて200〜300で調整）
             quick-tap-ms = <900>;      // タップ+長押しでリピートさせる時間
-
-            
         };
 
-       rsr_vol: rsr_vol {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp C_VOL_DN>;
-        ccw-binding = <&kp C_VOL_UP>;
-    };
+        rsr_vol: rsr_vol {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&kp C_VOL_DN>;
+            ccw-binding = <&kp C_VOL_UP>;
+        };
 
-    rsr_pg: rsr_pg {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp PG_UP>;
-        ccw-binding = <&kp PAGE_DOWN>;
-    };
+        rsr_pg: rsr_pg {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&kp PG_UP>;
+            ccw-binding = <&kp PAGE_DOWN>;
+        };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
@@ -223,7 +221,7 @@
 
             sensor-bindings =
                 <&rsr_pg>,
-                <&rsr_pg>;
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_1 {
@@ -234,9 +232,7 @@
 &mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER    &kp DEL
             >;
 
-            sensor-bindings =
-                <&rsr_pg>,
-                <&rsr_pg>;
+            sensor-bindings = <&rsr_pg>, <&rsr_pg>;
         };
 
         layer_2 {
@@ -247,9 +243,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
 
-            sensor-bindings =
-                <&rsr_pg>,
-                <&rsr_pg>;
+            sensor-bindings = <&rsr_pg>, <&rsr_pg>;
         };
 
         layer_3 {
@@ -260,9 +254,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
 
-            sensor-bindings =
-                <&rsr_pg>,
-                <&rsr_pg>;
+            sensor-bindings = <&rsr_pg>, <&rsr_pg>;
         };
 
         layer_4 {
