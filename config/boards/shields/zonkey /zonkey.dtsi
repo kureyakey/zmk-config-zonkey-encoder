@@ -3,18 +3,17 @@
 
 / {
     chosen {
-        zmk,physical-layout = &physical_layout0;
+        zmk,physical-layout = &zonkey_physical_layout;
         zmk,battery = &non_lipo_battery;
     };
 
-    physical_layout0: physical_layout_0 {
+    zonkey_physical_layout: zonkey_physical_layout {
         compatible = "zmk,physical-layout";
-        display-name = "default_layout";
-
-        kscan = <&kscan0>;
+        display-name = "Default";
         transform = <&default_transform>;
+        kscan = <&kscan0>;
 
-        keys  //                 w   h    x    y     rot   rx   ry
+        keys   //                 w   h    x    y     rot   rx   ry
             = <&key_physical_attrs 100 100   25    0       0    0    0>
             , <&key_physical_attrs 100 100  125    0       0    0    0>
             , <&key_physical_attrs 100 100  225    0       0    0    0>
@@ -80,17 +79,17 @@
         >;
     };
 
-    kscan0: kscan_0 {
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
         diode-direction = "col2row";
         wakeup-source;
 
-        row-gpios
-            = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            ;
+        row-gpios =
+            <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
     trackball_listener: trackball_listener {
