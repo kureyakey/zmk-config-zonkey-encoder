@@ -243,7 +243,9 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
 
-            sensor-bindings = <&rsr_pg>, <&rsr_pg>;
+            sensor-bindings =
+                <&rsr_pg>,
+                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         layer_3 {
