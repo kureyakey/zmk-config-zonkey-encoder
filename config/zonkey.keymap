@@ -223,7 +223,7 @@
 
             sensor-bindings =
                 <&rsr_pg>,
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+                <&rsr_vol>;
         };
 
         layer_1 {
@@ -236,7 +236,7 @@
 
             sensor-bindings =
                 <&rsr_pg>,
-                <&inc_dec_kp LG(LEFT) LG(RIGHT)>;
+                <rsr_vol>;
         };
 
         layer_2 {
@@ -249,7 +249,7 @@
 
             sensor-bindings =
                 <&rsr_pg>,
-                <&inc_dec_kp C_BRIGHTNESS_INC C_BRI_DEC>;
+                <rsr_vol>;
         };
 
         layer_3 {
@@ -262,7 +262,7 @@
 
             sensor-bindings =
                 <&rsr_pg>,
-                <&inc_dec_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
+                <rsr_vol>;
         };
 
         layer_4 {
@@ -273,7 +273,7 @@
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &trans        &trans        &trans  &trans  &kp BACKSPACE  &kp ENTER        &kp DEL
             >;
 
-            sensor-bindings = <&rsr_pg>, <&inc_dec_kp LG(LS(Z)) LG(Z)>;
+            sensor-bindings = <&rsr_pg>, rsr_vol>;
         };
 
         layer_5 {
@@ -284,7 +284,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
 
-            sensor-bindings = <&rsr_pg>, <&inc_dec_kp DOWN UP_ARROW>;
+            sensor-bindings = <&rsr_pg>, <&rsr_vol>;
         };
 
         layer_6 {
@@ -295,7 +295,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&rsr_pg>, <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&rsr_pg>, <&rsr_vol>;
         };
     };
 };
