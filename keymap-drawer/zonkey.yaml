@@ -41,9 +41,9 @@ layers:
   - LCTRL
   - LEFT COMMAND
   - LEFT ALT
-  - {t: INT HENKAN, h: '3'}
+  - {t: INTERNATIONAL 3, h: '3'}
   - {t: SPACE, h: '2'}
-  - {t: INT5, h: '1'}
+  - {t: INT KANA, h: '1'}
   - D
   - BACKSPACE
   - ENTER
